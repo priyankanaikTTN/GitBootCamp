@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
+    <!-- ***************** Exercise q1 - q8 ***********  -->
+
+
+    <bean id="databaseBean" class="com.spring.demo.Database">
+
+        <property name="name" value="Port101"/>
+        <property name="port" value="101"/>
+
+
+    </bean>
+
+    <bean id="complexBean" class="com.spring.demo.Complex">
+        <property name="list">
+            <list>
+                <value>hyundai</value>
+                <value>1</value>
+                <value>2</value>
+             </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="Three"></entry>
+                <entry key="2" value="Two"></entry>
+                <entry key="1" value="One"></entry>
+
+            </map>
+
+        </property>
+
+        <property name="set">
+            <set>
+                <value>3</value>
+                <value>4</value>
+                <value>3</value>
+            </set>
+        </property>
+    </bean>
+
+
+
+    <bean id="teaBean" name="hotDrink" class="com.spring.demo.Tea"/>
+
+
+    <bean id="expressBean" name="hotDrinks" class="com.spring.demo.ExpressTea"/>
+
+
+    <bean id="autoWiredNamedRestaurant" class="com.spring.demo.Restaurant" autowire="byName"/>
+
+
+   <!-- <bean id="autoWiredTypeRestaurant" class="com.spring.demo.Restaurant" autowire="byType"/>
+-->
+
+    <bean id="autoWiredConsRestaurant" class="com.spring.demo.Restaurant" autowire="constructor">
+
+        <property name="hotDrink" ref="expressBean"/> <!--because of required annotation-->
+    </bean>
+
+    <bean id="teaRestaurant" class="com.spring.demo.Restaurant">
+        <property name="hotDrink" ref="teaBean"/>
+
+    </bean>
+
+    <bean id="expressRestaurant" class="com.spring.demo.Restaurant">
+        <property name="hotDrink">
+            <bean class="com.spring.demo.ExpressTea"></bean>
+        </property>
+    </bean>
+
+    <bean id="SingleRes" class="com.spring.demo.Restaurant" scope="singleton" autowire="byName"
+/>
+
+    <bean id="PrototypeRes" class="com.spring.demo.Restaurant" scope="prototype" autowire="byName"/>
+
+    <bean id="requiredRes" class="com.spring.demo.Restaurant" >
+        <property name="hotDrink" ref="expressBean"/>
+    </bean>
+
+
+
+
+
+</beans>
