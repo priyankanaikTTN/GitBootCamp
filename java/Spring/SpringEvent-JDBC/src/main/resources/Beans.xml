@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+<context:annotation-config></context:annotation-config>
+
+    <context:component-scan base-package="com.bootcamp.events"/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/spring_jdbc"/>
+    <property name="username" value="root"/>
+    <property name="password" value="igdefault"/>
+    </bean>
+
+    <bean class="com.bootcamp.events.exercise.EmployeeDaoIml">
+    <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean name="customContextEvent" class="com.bootcamp.events.CustomContextEvent"/>
+
+    <bean name="customStopEvent" class="com.bootcamp.events.ContextStopEvent"/>
+
+    <bean name="emailListener" class="com.bootcamp.events.customEvents.EmailListener"/>
+
+    <bean name="employeePublisher" class="com.bootcamp.events.exercise.EmployeePublisher"/>
+
+    <bean name="employeeListener" class="com.bootcamp.events.exercise.EmployeeListener"/>
+</beans>
