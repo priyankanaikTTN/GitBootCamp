@@ -1,0 +1,105 @@
+#myModal .modal-dialog{
+	    margin: 0px auto;
+}
+#myModal .modal-content{
+    width: 470px;
+    border-radius: 0;
+    margin: 0 auto;
+} 
+#myModal .modal-header{
+	background-color: rgb(107, 57, 108); color: #fff;
+        border-bottom: 0;
+}
+#myModal .modal-title{
+	width: 50px; height: auto;
+}
+#myModal .close{opacity: 1;}
+#lines { 
+    padding: 20px 20px 100px 0;
+    font: 100 24px Sans-Serif;
+    position: relative;
+    margin-top: 2%;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    color: #fff;
+}
+
+#myModal .modal-body	{
+	background: url('../img/bk-berry.jpg') rgb(107, 57, 108); min-height: 570px; height: auto;
+}
+
+#myModal .modal-body .r-title{
+	position: relative;
+	color: #fff;
+	text-align: center;
+}
+#myModal .modal-body .r-title h3:after {
+    content: " ";
+    height: 4px;
+    width: 39px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 24px;
+    border-radius: 4px;
+    text-align: -webkit-center;
+    left: 47%;
+}
+#myModal .modal-body .r-title h4{ text-transform: capitalize;}
+
+.carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right {
+    left: 0%;
+    text-align: center;
+    position: relative;
+    display: block;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+    position: relative;
+    left: 40%;
+    display: block;
+    border: 4px solid #fff;
+    width: 20%;
+    margin-top: 20%;
+}
+.carousel-inner {
+    overflow: hidden;
+    max-height: 330px;
+
+}
+.carousel-indicators {
+    bottom: -50px;
+}
+.carousel-caption {
+    right: 0%;
+    left: 0%;
+    padding-bottom: 30px;
+    position: relative;
+    bottom: 0px;
+    margin: 30px 0px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ac4678;
+    text-align: left;
+    /* text-shadow: 0 1px 2px rgba(0,0,0,.6); */
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 20px;
+
+}
+
+.carousel-caption h4 {
+  quotes: "“" "”" ;
+}
+.carousel-caption .author{font-size: 0.9em;}
+.carousel-caption .author > .title{
+	color: #000;
+}
+.carousel-caption h4:before {
+    content: open-quote;
+}
+.carousel-caption h4:after {
+    content: close-quote;
+}
