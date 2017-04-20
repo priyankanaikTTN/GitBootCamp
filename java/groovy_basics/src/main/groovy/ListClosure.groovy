@@ -7,29 +7,18 @@ class ListClosure {
     public static  void findElement()
     {
 
-       boolean flag =false;
+     
 
-        def ispresent = { ele,id ->
+        def ispresent = { list,id ->
 
-                   if(id==ele)
-                           (true)
-
-                             else
-                               (false)
+                 println list.any{it->it==id}
         }
 
         List list = Arrays.asList("a","b","c");
 
-        list.any {
 
-           flag=  ispresent(it,"a")
-        }
+        ispresent(list,'c')
 
-
-        if(flag)
-             println(true)
-        else
-            println(false)
     }
 
     public static void main(String[] args) {
