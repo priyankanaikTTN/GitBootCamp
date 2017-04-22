@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="com.im.test.UserSpec" tests="5" failures="0" errors="0" timestamp="2017-04-22T18:20:46" hostname="priyanka-naik" time="0.013">
+  <properties/>
+  <testcase name="First test" classname="com.im.test.UserSpec" time="0.0"/>
+  <testcase name="We are able to get the maximum of the two numbers[0]" classname="com.im.test.UserSpec" time="0.004"/>
+  <testcase name="We are able to get the maximum of the two numbers[1]" classname="com.im.test.UserSpec" time="0.001"/>
+  <testcase name="We are able to get the maximum of the two numbers[2]" classname="com.im.test.UserSpec" time="0.001"/>
+  <testcase name="We get an encrypted password from a string " classname="com.im.test.UserSpec" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
