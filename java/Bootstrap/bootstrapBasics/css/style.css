@@ -27,16 +27,15 @@
     color: #fff;
 }
 
-#myModal .modal-body	{
-	background: url('../img/bk-berry.jpg') rgb(107, 57, 108); min-height: 570px; height: auto;
-}
 
-#myModal .modal-body .r-title{
+
+.r-title{
+background: url('../img/bk-berry.jpg') rgb(107, 57, 108); min-height: 570px; height: auto;
 	position: relative;
 	color: #fff;
 	text-align: center;
 }
-#myModal .modal-body .r-title h3:after {
+.r-title h3:after {
     content: " ";
     height: 4px;
     width: 39px;
@@ -47,7 +46,7 @@
     text-align: -webkit-center;
     left: 47%;
 }
-#myModal .modal-body .r-title h4{ text-transform: capitalize;}
+.r-title h4{ text-transform: capitalize;}
 
 .carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right {
     left: 0%;
@@ -60,24 +59,33 @@
     left: 40%;
     display: block;
     border: 4px solid #fff;
-    width: 20%;
-    margin-top: 20%;
+    width: 10%;
+    margin-top: 10%;
 }
 .carousel-inner {
     overflow: hidden;
     max-height: 330px;
 
 }
+
+.mynavbar
+{  background-color:#823278;
+ 
+} 
+
+
+.mycustomnavbar
+{ margin-bottom:0px;
+ border:none;}
 .carousel-indicators {
     bottom: -50px;
 }
 .carousel-caption {
-    right: 0%;
-    left: 0%;
+    
     padding-bottom: 30px;
     position: relative;
     bottom: 0px;
-    margin: 30px 0px;
+    margin: 20px 0px;
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
