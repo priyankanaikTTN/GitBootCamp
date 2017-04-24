@@ -11,9 +11,10 @@ class Q8 {
 
 
 
-       println( list.sort().reverse().unique())
+        list.unique().sort {element1,element2->
+            element1 < element2 ? 1 : element1==element2 ? 0 : -1}
 
-
+        println(list)
 
     }
 }

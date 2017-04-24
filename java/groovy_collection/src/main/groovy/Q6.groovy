@@ -9,16 +9,16 @@ class Q6
 
         List list = ['a','b',1,4,'e',8,10,'p']
         List list1=[]
-        list.eachWithIndex{ entry, i ->
+
+        int count=1;
+        list.removeAll { ++count%2!=0
 
 
-
-            if(i%2!=0)
-                list1.add(entry)
         }
 
 
-println(list1)
+        println(list)
+
 
 
     }

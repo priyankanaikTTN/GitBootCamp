@@ -7,6 +7,7 @@ class Q11 {
 
         Range range = 3..15
         println "first element : " +range.from
+        println("second element : "+range.get(1))
         println "last element  : " +range.to
 
 

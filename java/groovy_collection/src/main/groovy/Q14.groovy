@@ -14,5 +14,7 @@ class Q14 {
             int counter = 0;
             s.each { chrctr -> if (chrctr.charAt(0) == c) counter++ }
             return counter;
+
+
         }
 }

@@ -10,7 +10,7 @@ class Q25 {
 
     public static Map<String, List<String>> getQueryParams(String url) {
         try {
-            Map<String, List<String>> params = new HashMap<String, List<String>>();
+            Map<String, String> params = new HashMap<String, String>();
             String[] urlParts = url.split("\\?");
 
             if (urlParts.length > 1) {
@@ -20,12 +20,11 @@ class Q25 {
                  String key = pair[0];
                     String value = pair[1];
 
-                    List<String> values = params.get(key);
-                    if (values == null) {
-                        values = new ArrayList<String>();
-                        params.put(key, values);
-                    }
-                    values.add(value);
+
+
+                        params.put(key, value);
+
+
                 }
             }
 

@@ -20,27 +20,38 @@ class Q24 {
         println "Group the employees on the basis of the bracket in which their salary falls. The ranges are 0-5000, 5001 and 10000, and so on"
 
 
-        def employees_0_5000 =  employees.groupBy {
-            element -> (element.getSalary()>0 && element.getSalary()<=5000)
+        def employees_salary_group =  employees.groupBy {
+            element ->
+                ((element.getSalary()>0 && element.getSalary()<=5000) ?
+                        '0-5000':(element.getSalary()>=5001
+                &&element.getSalary()<=10000)?'5000-10000':'10000&above')
+
+
+
         }
-        println()
-        println "employees with salary range 0-5000: ${employees_0_5000.get(true)}"
 
-        def employees_5001_10000 =  employees.groupBy {element -> (element.getSalary()>=5001 && element.getSalary()<=10000)}
-        println "employees with salary range 5001-10000: ${employees_5001_10000.get(true)}"
-
-        println "# of employees in department d1: ${employees.count{element -> element.getDepartmentName()=="d1"}}"
-        println "# of employees in department d2: ${employees.count{element -> element.getDepartmentName()=="d2"}}"
+        println(employees_salary_group)
 
 
-        println "employees whose age is between 18 and 35: ${employees.groupBy{element -> element.getAge()>=18 && element.getAge()<=35 }.get(true)}"
+
+       def employee_count_byDepartment= employees.groupBy {element->element.getDepartmentName()}
+
+        employee_count_byDepartment.each {element->
+
+
+            println("# of employee in department "+element.getKey()+": "+element.getValue().size())
+
+
+        }
+
+       println "employees whose age is between 18 and 35: ${employees.findAll {element->element.getAge()>=18&&element.getAge()<=35}}"
 
         def elementWithSameFirstLetter =  employees.groupBy { element -> element.getName().charAt(0) }
 
-        println "element With Same First Letter = ${elementWithSameFirstLetter}"
+      println "element With Same First Letter = ${elementWithSameFirstLetter}"
 
         elementWithSameFirstLetter.each { e ->
-            println "# of employees in each group whose age is > 20: ${e.getValue().count{element -> element.getAge() > 20 } }"
+            println "# of employees in group ${e.getKey()} whose age is > 20: ${e.getValue().count{element -> element.getAge() > 20 } }"
         }
 
         println "Group the employees according to their department"

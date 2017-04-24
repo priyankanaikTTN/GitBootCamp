@@ -6,14 +6,14 @@ class Q10 {
 
     public static void main(String[] args) {
 
-        String s = "this string needs to be split";
+        String s = "this strinng needs to be split";
         println("s :: " +s)
-        println ('s.tokenize(" ") ::' + s.tokenize(" "))
+        println ('s.tokenize(" ") ::' + s.tokenize("n"))
         println ("s.tokenize() :: "+s.tokenize())
 
 
 
-        println ('s.split(" ") :: '+s.split(" "))
+        println ('s.split(" ")   :: '+s.split("n"))
         println ('s.split(/\\s/) ::'+s.split(/\s/))
 
 

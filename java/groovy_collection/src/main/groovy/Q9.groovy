@@ -10,6 +10,9 @@ class Employee
     String DepartmentName
     Double salary
 
+    Employee() {
+    }
+
     Employee(int employeeNumber, String name, int age, String departmentName, Double salary) {
         EmployeeNumber = employeeNumber
         Name = name
@@ -71,10 +74,10 @@ public class Q9 {
         println(list)
        println()
        println("Employees with salary greater than 5000")
-        println list.groupBy{ it.getSalary()>5000
+        println list.findAll{ it.getSalary()>5000
 
 
-         }.get(true)
+         }
 
         println()
          println("Name of youngest employee")

@@ -4,7 +4,18 @@
 class Q20 {
 
     public static void main(String[] args) {
-        println Map.class
-        println Map.getClass()
+
+        println ArrayList.class
+
+        println ArrayList.getClass()
+
+        println(Map.class)
+
+        println(Map.getClass())
+
+        def map =['2':0]
+
+        println(map.class)
+        println(map.getClass())
     }
 }
