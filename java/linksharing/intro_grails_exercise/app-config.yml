@@ -1,0 +1,11 @@
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    password: igdefault
+
+grails:
+     app:
+       context:/
