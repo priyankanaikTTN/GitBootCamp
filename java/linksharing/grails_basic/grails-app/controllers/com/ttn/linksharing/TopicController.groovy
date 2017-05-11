@@ -1,7 +1,9 @@
 package com.ttn.linksharing
 
 import co.ResourceSearchCO
+import co.TopicCO
 import enums.Visibility
+import vo.TopicVO
 
 class TopicController {
 
@@ -47,14 +49,14 @@ class TopicController {
     }
 
 
-    def save(String topicName, String visibility)
+    def save(TopicCO topicCO)
     {
 
         if(session['user'])
         {
-            Visibility visible = Visibility.toString(visibility)
+            Visibility visible = Visibility.toString(topicCO.visibility.toString())
 
-            Topic topic = new Topic(topicname:topicName,createdBy: session['user'] , visibility: visible)
+            Topic topic = new Topic(topicname:topicCO.topicname,createdBy: session['user'] , visibility: visible)
 
            // log.error("${topic.topicname} :: ${topic.createdBy} :: ${topic.visibility}")
 
@@ -77,7 +79,7 @@ class TopicController {
             flash.error =" User session no set"
         }
 
-        render flash.message
+        redirect(controller: "user", action:"index" )
     }
     def delete(long id)
     {

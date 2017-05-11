@@ -1,0 +1,135 @@
+.custom-navbar{
+
+  border-color: #000;
+  border-width: medium;
+  border-radius: 7px;
+}
+
+.panelUser{
+
+  border-color: #000;
+  border-width: medium;
+  border-radius: 7px;
+}
+
+.span-user{
+
+  font-size : 100px;
+  color: #696969;
+  border: 2px solid grey;
+}
+
+.panelProfile{
+
+  border-color: #000;
+  border-width: medium;
+  border-radius: 7px;
+}
+
+#button-browse{
+
+  margin-left: 40px;
+}
+
+#btn-update-profile {
+
+  margin-left: 160px;
+}
+
+.panelChangePassword{
+
+  border-color: #000;
+  border-width: medium;
+  border-radius: 7px;
+}
+
+.panelTopics{
+
+  border-color: #000;
+  border-width: medium;
+  border-radius: 7px;
+}
+
+
+
+.glyphicon-user-topics {
+  font-size: 60px;
+  color: #574343;
+  border: 2px solid #4b4747;
+}
+
+.glyphicon-custom-envelope-edit-trash {
+
+  font-size: 25px;
+  color: #000;
+}
+
+.nav a
+{
+  color: #fff;
+  display: inline-block;
+  padding: 0.25em 0.7em;
+  text-decoration: none;
+
+  border-radius: 0.3em;
+}
+
+.input-group-addon {
+   padding: 0px !important;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.navbar-default #sizing-addon-search a {
+  color: #000000 !important;
+}
+.navbar {
+  padding-right: 0 !important;
+}
+
+.dropdown-menu > li > a {
+  color: #333 !important;
+}
+
+.row {
+  position: relative;
+  max-width: 1400px;
+
+  padding: 0 5%;
+}
+
+.navbar-default {
+  background-color: #4b275d;!important;
+  border-color: #e7e7e7;!important;
+}
+
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn{
+  padding:2px; !important;
+  border: 1px solid rgba(0, 0, 0, 0.24);!important;
+}
+
+btn-default {
+  color: #333;!important;
+  background-color: #fff;!important;
+  border-color: #ccc;!important;
+}
+
+.panel-heading > .dropdown .dropdown-toggle {
+  color: #000;
+}
+.footer{
+  background-color: #4b275d;!important;
+  border-color: #e7e7e7;!important;
+}

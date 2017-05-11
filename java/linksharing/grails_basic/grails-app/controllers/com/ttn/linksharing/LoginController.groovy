@@ -1,5 +1,6 @@
 package com.ttn.linksharing
 
+import co.UserCO
 import vo.PostVO
 
 class LoginController {
@@ -12,17 +13,17 @@ class LoginController {
         else{
 
 
-            List<PostVO> topPosts = Resource.getTopPosts()
-            render topPosts
+
+            render (view:"index")
 
         }
 
     }
 
 
-    def loginHandler(String username , String password)
+    def loginHandler(String loginUserName , String loginPassword)
     {
-        User user = User.findByUsernameAndPassword(username,password)
+        User user = User.findByUsernameAndPassword(loginUserName,loginPassword)
         flash.error=""
 
         if(user==null)
@@ -37,7 +38,7 @@ class LoginController {
         {
             session['user']=user
 
-            redirect(controller: 'login' , action: 'index')
+            redirect(controller: 'user' , action: 'index')
         }
         else
         { flash.error = 'Your account is not active'
@@ -48,21 +49,39 @@ class LoginController {
 
     }
 
-    def register(String fname,String lname, String e_mail, String pass, String confirm,String uname)
+    def register(UserCO userCO)
     {
 
-        User user = new User(firstname: fname, lastname: lname, email: e_mail, username: uname, password: pass,confirmPassword: confirm)
-         if(!user.save(flush:true))
-             render flash.message='Login.not.registered.user'
+        if (userCO.hasErrors())
+        {
+            render(view: '/login/index')
+        }
+            else
+        {
 
-        else
-             render  flash.message='Login.register.user'
-    }
+                User user = new User(firstname: userCO.firstName, lastname: userCO.lastName,
+                        email:userCO.email, username:userCO.userName,
+                        password: userCO.password,
+                        confirmPassword: userCO.confirmPassword,
+                        photo: userCO.photo, admin: userCO.admin)
+
+                  if(!user.save(flush:true))
+                  {   render (view:'/login/index')}
+
+                     else {
+                      session['user'] = user
+                      redirect(controller: 'login', action: 'index')
+
+                  }
+
+           }
+        }
+
 
     def logout()
     {
 
         session.invalidate()
-        forward(controller : "login", action : 'index')
+        forward(controller : 'login', action : 'index')
     }
 }

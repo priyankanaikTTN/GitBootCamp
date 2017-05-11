@@ -64,6 +64,34 @@ abstract class Resource {
     }
 
 
+    static List<PostVO> recentShares()
+    {
+        List<PostVO>  recentPostList =[]
+
+        Resource.createCriteria().list(max:2){
+            projections{
+                property('description')
+               'createdBy'{
+                   property('firstname')
+                   property('username')
+                   property('photo')
+
+               }
+                'topic' {
+
+                    property('topicname')
+                    property('lastUpdated')
+                    eq('visibility', enums.Visibility.PUBLIC)
+                }
+            }
+
+        }?.each{
+            recentPostList.add(new PostVO( description: it[0],userFirstName: it[1], userName: it[2],
+                    userPhoto: it[3],topicName: it[4],postDate: it[5]))
+        }
+
+        return recentPostList
+    }
 
     static List<PostVO> getTopPosts() {
         List<PostVO> topPosts = []

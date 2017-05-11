@@ -45,6 +45,9 @@ class ResourceController {
 
         if (resourceSearchCO.q) {
 
+            if(resourceSearchCO.visibility!=Visibility.PUBLIC)
+
+                resourceSearchCO.visibility=Visibility.PUBLIC
 
         }
 

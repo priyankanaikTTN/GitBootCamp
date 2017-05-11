@@ -1,6 +1,8 @@
 package com.ttn.linksharing
 
+import co.SearchCO
 import com.sun.org.apache.xpath.internal.operations.Bool
+import vo.TopicVO
 
 class User {
 
@@ -69,6 +71,44 @@ class User {
         [this.firstname, this.lastname].findAll { it }.join(' ')
     }
 
+    List<Topic> getSubscribedTopics() {
+
+        List<TopicVO> topicNameList = Subscription.createCriteria().list {
+            projections {
+                'topic' {
+
+                    property('topicname')
+
+                    'createdBy' {
+
+                        property('username')
+
+                    }
+
+                }
+            }
+            eq('user.id', id)
+        }.collect{ "${it[0]} by ${it[1]}"}
+
+        return topicNameList
+    }
+
+     List <ReadingItem> getUnReadResources(SearchCO searchCO)
+     {
+         List<ReadingItem> readinItems
+         if(searchCO.q)
+         {
+             readinItems  =ReadingItem.createCriteria().list(max:searchCO.max,offset:searchCO.offset) {
+
+                 eq('user', this)
+                 eq('isRead', false)
+                 ilike('resource.description',searchCO.q)
+             }
+
+         }
+         return readinItems
+
+     }
 
     @Override
     public String toString() {
